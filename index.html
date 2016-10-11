@@ -9,8 +9,8 @@
   </head>
   <body>
   	<div class="stopwatch">
-	    <div id="hours">01</div>:
-	    <div id="minutes">40</div>:
+	    <div id="hours">00</div>:
+	    <div id="minutes">00</div>:
 	    <div id="seconds">00</div>
 	</div>
     <div class="buttons">
@@ -19,22 +19,44 @@
 	    <button id="clear" onclick="clearWatch()">Clear</button>
 	</div>
 	<script>
-    	start = document.getElementById('start'),
-    	stop = document.getElementById('stop'),
-    	clear = document.getElementById('clear'),
-    	seconds = 0, minutes = 0, hours = 0, timerId = '';
+    	var seconds = 0, minutes = 0, hours = 0, timerId = '';
     	function startWatch(){
-    		console.log('start');	
+    		console.log('start');
+    		timerId = setInterval(updateTime,1000);
     	}
     	function stopWatch(){
     		console.log('stop');
+    		clearInterval(timerId);
     	}
     	function clearWatch(){
     		console.log('clear');
+    		seconds = 0;
+    		minutes = 0;
+    		hours = 0;
+    		clearInterval(timerId);
+    		displayNewTime();
+    		
     	}
     	function updateTime(){
-    		console.log('insertTime');
+    		seconds++;
+    		if(seconds >= 60){
+    			seconds = 0;
+    			minutes++;
+    			if(minutes >=60){
+    				minutes = 0;
+    				hours++;
+    			}
+    		}
+    		displayNewTime();
     	}
+    	function displayNewTime(){
+    		document.getElementById('hours').innerHTML = padDigits(hours,2);
+    		document.getElementById('minutes').innerHTML = padDigits(minutes,2);
+    		document.getElementById('seconds').innerHTML = padDigits(seconds,2);
+    	}
+    	function padDigits(number, digits) {
+    		return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+		}
     </script>
   </body>
 </html>
