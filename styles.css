@@ -1,0 +1,55 @@
+@import "https://fonts.googleapis.com/css?family=Oswald:700";
+body {
+  background: black;
+  
+  
+  height: 100vh;
+  font-family: 'Oswald';
+  font-weight: 700;
+  color:white;
+  font-size:40vh;
+}
+.stopwatch{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.buttons{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#hours,#minutes,#seconds{
+  margin:20px;
+}
+button{
+  border:1px solid white;
+  background:white;
+  font-size:3vh;
+  text-transform: uppercase;
+  margin:10px;
+  cursor:pointer;
+  border-radius:3px;
+  padding:10px;
+}
+button:hover{
+  background:black;
+  color:white;
+}
+

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet"></link>
+    
+    <title>JavaScript Stopwatch</title>
+  </head>
+  <body>
+  	<div class="stopwatch">
+	    <div id="hours">01</div>:
+	    <div id="minutes">40</div>:
+	    <div id="seconds">00</div>
+	</div>
+    <div class="buttons">
+	    <button id="start" onclick="startWatch()">Start</button>
+	    <button id="stop" onclick="stopWatch()">Stop</button>
+	    <button id="clear" onclick="clearWatch()">Clear</button>
+	</div>
+	<script>
+    	start = document.getElementById('start'),
+    	stop = document.getElementById('stop'),
+    	clear = document.getElementById('clear'),
+    	seconds = 0, minutes = 0, hours = 0, timerId = '';
+    	function startWatch(){
+    		console.log('start');	
+    	}
+    	function stopWatch(){
+    		console.log('stop');
+    	}
+    	function clearWatch(){
+    		console.log('clear');
+    	}
+    	function updateTime(){
+    		console.log('insertTime');
+    	}
+    </script>
+  </body>
+</html>
